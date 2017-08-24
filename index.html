@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>代码整理</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
-测试主页
+<div class="header">
+    <h1>标题</h1>
+</div>
+    <div class="nav">
+        <ul>
+            <li>HTML
+                <ul>
+                    <li class="sub-title" toId="div1">footer置于页面底部</li>
+                    <li class="sub-title" toId="div2">F7弹层2</li>
+                </ul>
+            </li>
+            <li>HTML</li>
+        </ul>
+    </div>
+    <div class="section">
+        <div id="div1">
+            <h2>footer置于页面底部</h2>
+            <p>注意不要指定<code>html</code>的<code>height</code>属性</p>
+            <div>
+                        <pre>
+        <span class="code-tag">
+            <span class="code-title">html</span> {
+                <span class="color-blue">min-height</span>: <span class="color-blue">100%</span>;
+                <span class="color-blue">position</span>: <span class="color-blue">relative</span>;
+            }
+            <span class="color-green">.footer</span> {
+                <span class="color-blue">position</span>: <span class="color-blue">absolute</span>;
+                <span class="color-blue">bottom</span>: <span class="color-blue">0</span>;
+            }
+        </span>
+                        </pre>
+            </div>
+        </div>
+        <div id="div2">
+            <h2>标题2</h2>
+            <p>test</p>
+            <div>
+                        <pre>
+                        <code class="xml">
+                            <span class="code-tag">
+                                <span>
+                                    <
+                                    <span class="code-title">html</span>
+                                    >
+                                </span>
+                            </span>
+
+                        </code>
+
+
+                        </pre>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="footer">
+        页脚
+    </div>
 </body>
+<script type="text/javascript">
+    console.log(document.getElementsByClassName('sub-title'))
+    // document.getElementsByClassName('sub-title').click(function () {
+    // 	var id = '#' + $(this).attr('toId');
+    // 	document.getElementById(id).scrollIntoView();
+    // })
+    $('.sub-title').on('click', function () {
+        var id = $(this).attr('toId');
+        document.getElementById(id).scrollIntoView();
+    })
+
+</script>
 </html>
